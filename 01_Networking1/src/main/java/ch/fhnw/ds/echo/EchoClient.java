@@ -15,11 +15,15 @@ public class EchoClient {
 	public static void main(String[] args) throws Exception {
 		String host = "86.119.38.130";
 		int port = 7;
-//		host = "localhost";
-//		port = 1234;
-		if (args.length > 0) { host = args[0]; }
-		if (args.length > 1) { port = Integer.parseInt(args[1]); }
-		
+		// host = "localhost";
+		// port = 1234;
+		if (args.length > 0) {
+			host = args[0];
+		}
+		if (args.length > 1) {
+			port = Integer.parseInt(args[1]);
+		}
+
 		System.out.println("connecting to " + host + ":" + port);
 
 		Socket s = new Socket(host, port, null, 0);
