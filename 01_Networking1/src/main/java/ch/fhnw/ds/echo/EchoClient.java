@@ -13,10 +13,10 @@ import java.net.Socket;
 public class EchoClient {
 
 	public static void main(String[] args) throws Exception {
-		String host = "86.119.38.130";
+		String host = "10.70.2.130";
 		int port = 7;
-		// host = "localhost";
-		// port = 1234;
+		host = "localhost";
+		port = 1234;
 		if (args.length > 0) {
 			host = args[0];
 		}

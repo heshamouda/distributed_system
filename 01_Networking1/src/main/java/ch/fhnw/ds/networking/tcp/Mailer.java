@@ -10,12 +10,12 @@ import java.util.Scanner;
 public class Mailer {
 
 	static Scanner in;
-	static Writer  out;
-	
+	static Writer out;
+
 	public static void main(String[] args) throws Exception {
 		Socket s = new Socket("lmailer.fhnw.ch", 25);
 
-		in  = new Scanner(s.getInputStream());
+		in = new Scanner(s.getInputStream());
 		out = new PrintWriter(s.getOutputStream(), true /* autoFlush */);
 
 		String hostName = InetAddress.getLocalHost().getHostName();
@@ -24,15 +24,15 @@ public class Mailer {
 		receive();
 		send("HELO " + hostName);
 		receive();
-		send("MAIL FROM: <juerg.christener@fhnw.ch>");
+		send("MAIL FROM: <hesham.ouda@students.fhnw.ch>");
 		receive();
-		send("RCPT TO: <dominik.gruntz@fhnw.ch>");
+		send("RCPT TO: <hesham.ouda@outlook.com>");
 		receive();
 		send("DATA");
 		receive();
-		send("To: dominik.gruntz@fhnw.ch");
+		send("To: hesham.ouda@outlook.com");
 		send("Subject: Meeting");
-		send("Hallo Dominik, komm doch rasch in mein Buero.");
+		send("Hallo Hesham, komm doch rasch in mein Buero.");
 		send(".");
 		receive();
 		s.close();
